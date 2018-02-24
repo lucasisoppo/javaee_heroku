@@ -1,0 +1,14 @@
+{"casas":[
+  {	
+  	"codigo":"99",
+	"endereco":"Rua XX",
+	"valor":"88",
+	"proprietario": "Lucas"
+  },
+  {	
+  	"codigo":"999",
+	"endereco":"Rua XXX",
+	"valor":"888",
+	"proprietario": "Miguel"
+  }
+]}

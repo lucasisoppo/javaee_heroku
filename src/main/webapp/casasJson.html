@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app="casasModulo">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <script src="js/angular.min.js"></script>
+     <script src="js/bootstrap.min.js"></script> 
+
+    <link rel="icon" href="imagens/favicon.ico">
+
+    <title>Sistema Imobiliario</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+ 	<script src="controller/casasjson.js"></script> 
+
+  </head>
+  <body ng-controller="casasController">
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a id=barraNavegacao class="navbar-brand" href="#">Sistema Imobiliario</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Sobre a Empresa <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Casas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contato</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastros</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="casas.html">Imoveis</a>
+              <a class="dropdown-item" href="pessoas.html">Pessoas</a>
+            </div>
+          </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <br>
+    <h1 align="center"> Cadastro de Imoveis </h1>
+    
+    <div class="container">
+		 		  <input class="form-group mr-sm-2" type="search" ng-model="pesquisaCasas" placeholder="Pesquisar">
+  	</div>
+			<br>
+		<div class="container">
+			<table class="table table-striped table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">Codigo</th>
+			      <th scope="col">Endereço</th>
+			      <th scope="col">Valor</th>
+			      <th scope="col">Proprietario</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			     <tr ng-repeat="tabelaCasas in casas | filter:pesquisaCasas" ng-click="selecionaCasas(tabelaCasas)">
+			      <th>{{tabelaCasas.codigo}}</th>
+			      <th>{{tabelaCasas.endereco}}</th>
+			      <th>{{tabelaCasas.valor}}</th>
+			      <th>{{tabelaCasas.proprietario}}</th>	
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+
+	</div>
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+     
+  </body>
+</html>
