@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="imagens/favicon.ico">
+
+  <title>Sistema Imobiliario TESTE 2</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/carousel.css" rel="stylesheet">
+  <script src="js/angular.min.js"></script>
+</head>
+<body>
+	 <script>
+            function getUrlVars() {
+                var vars = {};
+                var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+
+            function init() {
+                var page = getUrlVars()["page"];
+                document.getElementById( "div"+page ).style.display = "inline"; 
+            }
+
+
+        </script>
+	<div ng-include src="'menus.html'"></div>  
+	</div>
+ <main role="main">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="first-slide" src="imagens/casa1.jpg" alt="First slide">
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>Casa em Sombrio - SC</h1>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Agende uma visita</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="second-slide" src="imagens/casa2.jpg" alt="Second slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Casa em Balneario Gaivotas - SC</h1>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Agende uma visita</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="third-slide" src="imagens/casa3.jpg" alt="Third slide">
+        <div class="container">
+          <div class="carousel-caption text-right">
+            <h1>Casa em Criciúma - SC</h1>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Agende uma visita</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Próximo</span>
+    </a>
+  </div>
+
+
+      <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+
+          <!-- Three columns of text below the carousel -->
+          <div class="row">
+            <div class="col-lg-4">
+              <img class="rounded-circle" src="imagens/bradesco.jpg" alt="Generic placeholder image" width="140" height="140">
+              <p>Simule seu financiamento com o Bradesco</p>
+              <p><a class="btn btn-secondary" href="#" role="button">Simule aqui &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="rounded-circle" src="imagens/itau.jpeg" alt="Generic placeholder image" width="140" height="140">
+              <p>Simule seu financiamento com o Itaú</p>
+              <p><a class="btn btn-secondary" href="#" role="button">Simule aqui &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="rounded-circle" src="imagens/caixa.png" alt="Generic placeholder image" width="140" height="140">
+              <p>Simule seu financiamento com a Caixa</p>
+              <p><a class="btn btn-secondary" href="#" role="button">Simule aqui &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+          </div><!-- /.row -->
+
+
+          <!-- START THE FEATURETTES -->
+
+          <hr class="featurette-divider">
+          <div id="div1" class="row featurette" onload="init()" >
+            <div class="col-md-7">
+              <h2 class="featurette-heading">Realizando o seu sonho da casa própria. <span class="text-muted">A mais de 27 anos no mercado.</span></h2>
+              <p class="lead">A LeM é uma empresa que oferece serviços imobiliários profissionais e gestão de investimentos imobiliários para investidores, proprietários e ocupantes de imóveis comerciais dos segmentos de escritórios, propriedades industriais, propriedades do setor de varejo, hotéis e outros como ambientes críticos e data centers.</p>
+            </div>
+            <div class="col-md-5">
+             
+            </div>
+          </div>
+	<!--
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+              <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+              <p class="lead">Texto 1111</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            </div>
+          </div>
+
+          <hr class="featurette-divider">
+
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+              <p class="lead">Texto 2222</p>
+            </div>
+            <div class="col-md-5">
+              <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            </div>
+          </div>
+
+          <hr class="featurette-divider">
+
+          <!-- /END THE FEATURETTES -->
+
+        </div><!-- /.container -->
+	-->
+
+        <!-- FOOTER -->
+        <footer class="container">
+          <p class="float-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+      </main>
+
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="js/jquery-3.2.1.slim.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>   
+</body>
+    </html>
