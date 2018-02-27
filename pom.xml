@@ -111,11 +111,11 @@
     <version>2.0</version>
     <scope>provided</scope>
 </dependency>
-<!-- https://mvnrepository.com/artifact/postgresql/postgresql-jdbc42 -->
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 <dependency>
-    <groupId>postgresql</groupId>
-    <artifactId>postgresql-jdbc42</artifactId>
-    <version>9.4.1208-atlassian-hosted</version>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.1</version>
 </dependency>
 
          
