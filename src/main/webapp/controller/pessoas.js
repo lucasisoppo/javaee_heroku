@@ -1,7 +1,7 @@
 var pessoasModulo = angular.module('pessoasModulo', []);
 
 pessoasModulo.controller("pessoasController", function ($scope, $http) {
-    urlPessoas = 'http://localhost:3000/SistemaImoveis-1.0/rest/pessoas';
+    urlPessoas = 'https://sistemaimo.herokuapp.com/rest/pessoas';
     $scope.listarPessoas = function () {
         $http.get(urlPessoas).success(function (pessoas) {
             $scope.pessoas = pessoas;

@@ -1,8 +1,8 @@
 var casasModulo = angular.module('casasModulo', []);
 
 casasModulo.controller("casasController", function ($scope, $http) {
-    urlPessoas = 'http://localhost:3000/SistemaImoveis-1.0/rest/pessoas';
-    urlCasas = 'http://localhost:3000/SistemaImoveis-1.0/rest/casas';
+    urlPessoas = 'https://sistemaimo.herokuapp.com/rest/pessoas';
+    urlCasas = 'https://sistemaimo.herokuapp.com/rest/casas';
 
     $scope.listarCasas = function () {
         $http.get(urlCasas).success(function (casas) {
