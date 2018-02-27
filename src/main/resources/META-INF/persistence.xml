@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.1">
-    <persistence-unit name="persistenceSistema" transaction-type="JTA">
+    <persistence-unit name="persistenceSistema" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
      <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
@@ -12,7 +12,6 @@
             <property name="javax.persistence.jdbc.user" value="pwmlnaxfdqbxvx"/>
             <property name="javax.persistence.jdbc.password" value="decc64c7392421a390a3b1a635be59f9744e6326fefc13795de1e7439daeabc0"/>
 			<property name="javax.persistence.jdbc.driver" value= "org.postgresql.Driver"/>
-            <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
