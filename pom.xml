@@ -33,11 +33,13 @@
 <build>
     <finalName>${project.artifactId}</finalName>
     <plugins>
-        <plugin>
-            <groupId>org.wildfly.plugins</groupId>
-            <artifactId>wildfly-maven-plugin</artifactId>
-            <version>${version.wildfly.maven.plugin}</version>
-        </plugin>
+       <plugin>
+                        <artifactId>maven-ear-plugin</artifactId>
+                        <version>${version.ear.plugin}</version>
+                        <configuration>
+                    <outputDirectory>../pathto/deployments</outputDirectory>
+                        </configuration>
+                    </plugin>s
 
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
