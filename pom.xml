@@ -39,7 +39,7 @@
                         <configuration>
                     <outputDirectory>../pathto/deployments</outputDirectory>
                         </configuration>
-                    </plugin>s
+                    </plugin>
 
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
