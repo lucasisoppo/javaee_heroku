@@ -30,21 +30,7 @@
 
 <dependencies>
 
-  <dependency>
-        <groupId>org.eclipse.persistence</groupId>
-        <artifactId>org.eclipse.persistence.core</artifactId>
-        <version>2.6.4</version>
-        <scope>compile</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>org.eclipse.persistence</groupId>
-        <artifactId>org.eclipse.persistence.jpa</artifactId>
-        <version>2.6.4</version>
-        <scope>compile</scope>
-    </dependency>
-  
-  
+ 
   
     <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
 <dependency>
@@ -58,7 +44,6 @@
 <groupId>javax</groupId>
 <artifactId>javaee-api</artifactId>
 <version>8.0</version>
-<scope>provided</scope>
 </dependency>
 
 <!-- WildFly Swarm Fractions -->
