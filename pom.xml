@@ -1,45 +1,183 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-   	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.lucas.sistema_Imoveis</groupId>
-	<artifactId>sistemaImoveis</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>  
-	<name>sistemaImoveis</name>
-	<description>Sistema de Imoveis</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>sistemaImo</groupId>
+  <artifactId>Imoveis1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
 
-    <properties>
-        <version.wildfly.swarm>2017.9.4</version.wildfly.swarm>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+<name>sistemaImoveis</name>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.wildfly.swarm</groupId>
-                <artifactId>bom-all</artifactId>
-                <version>${version.wildfly.swarm}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+<description>Sistema de Imoveis</description>
 
-   <!-- Commented to keep it simple -->
+
+<properties>
+
+<version.wildfly.swarm>2017.9.4</version.wildfly.swarm>
+
+<maven.compiler.source>1.8</maven.compiler.source>
+
+<maven.compiler.target>1.8</maven.compiler.target>
+
+<failOnMissingWebXml>false</failOnMissingWebXml>
+
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+</properties>
+
+
+<dependencyManagement>
+
+
+<dependencies>
+
+
+<dependency>
+
+<groupId>javax</groupId>
+
+<artifactId>javaee-api</artifactId>
+
+<version>8.0</version>
+
+<scope>provided</scope>
+
+</dependency>
+
+<!-- WildFly Swarm Fractions -->
+
+
+
+<dependency>
+
+<groupId>org.wildfly.swarm</groupId>
+
+<artifactId>jsf</artifactId>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.wildfly.swarm</groupId>
+
+<artifactId>cdi</artifactId>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>javax.ws.rs</groupId>
+
+<artifactId>javax.ws.rs-api</artifactId>
+
+<version>2.1</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.hibernate.javax.persistence</groupId>
+
+<artifactId>hibernate-jpa-2.1-api</artifactId>
+
+<version>1.0.0.Final</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.hibernate</groupId>
+
+<artifactId>hibernate-core</artifactId>
+
+<version>4.3.6.Final</version>
+
+</dependency>
+
+
+<dependency>
+
+<groupId>org.hibernate</groupId>
+
+<artifactId>hibernate-entitymanager</artifactId>
+
+<version>4.3.6.Final</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+
+
+
+<dependency>
+
+<groupId>javax.inject</groupId>
+
+<artifactId>javax.inject</artifactId>
+
+<version>1</version>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.jboss.weld/weld-core -->
+
+
+
+<dependency>
+
+<groupId>org.jboss.weld</groupId>
+
+<artifactId>weld-core</artifactId>
+
+<version>2.4.6.Final</version>
+
+</dependency>
+
+<dependency>
+
+<groupId>javax.enterprise</groupId>
+
+<artifactId>cdi-api</artifactId>
+
+<version>2.0</version>
+
+<scope>provided</scope>
+
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+
+
+
+<dependency>
+
+<groupId>org.postgresql</groupId>
+
+<artifactId>postgresql</artifactId>
+
+<version>9.4-1206-jdbc42</version>
+
+</dependency>
+
+</dependencies>
+
+</dependencyManagement>
+
+<!-- Commented to keep it simple -->
+
+
+<!-- Commented to keep it simple -->
 <build>
     <finalName>${project.artifactId}</finalName>
     <plugins>
-       <plugin>
-                        <artifactId>maven-ear-plugin</artifactId>
-                        <version>2.10.1</version>
-                        <configuration>
-                    <outputDirectory>../pathto/deployments</outputDirectory>
-                        </configuration>
-                    </plugin>
+        <plugin>
+            <groupId>org.wildfly.plugins</groupId>
+            <artifactId>wildfly-maven-plugin</artifactId>
+            <version>${version.wildfly.maven.plugin}</version>
+        </plugin>
 
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -68,7 +206,7 @@
             </executions>
         </plugin>
 
-    <!--    <plugin>
+        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
             <version>3.0.0</version>
@@ -77,82 +215,8 @@
                 <outputDirectory>target/wildfly-${version.wildfly}/standalone/deployments</outputDirectory>
                 <warName>${project.artifactId}</warName>
             </configuration>
-        </plugin> -->
-	    
+        </plugin>
     </plugins>
 </build>
 
-    <dependencies>
-        <!-- Java EE 7 dependency -->
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>8.0</version>
-            <scope>provided</scope>
-        </dependency>     
-        <!-- WildFly Swarm Fractions -->
-        <dependency>
-            <groupId>org.wildfly.swarm</groupId>
-            <artifactId>jsf</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.wildfly.swarm</groupId>
-            <artifactId>cdi</artifactId>
-        </dependency>
-        <!-- primefaces -->
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>6.1</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
-            <version>2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>1.0.0.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.3.6.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.6.Final</version>
-        </dependency>
-             
-             
-<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
-<dependency>
-    <groupId>javax.inject</groupId>
-    <artifactId>javax.inject</artifactId>
-    <version>1</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.jboss.weld/weld-core -->
-<dependency>
-    <groupId>org.jboss.weld</groupId>
-    <artifactId>weld-core</artifactId>
-    <version>2.4.6.Final</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api -->
-<dependency>
-    <groupId>javax.enterprise</groupId>
-    <artifactId>cdi-api</artifactId>
-    <version>2.0</version>
-    <scope>provided</scope>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>9.4-1206-jdbc42</version>
-</dependency>
-
-         
-   </dependencies>
 </project>
