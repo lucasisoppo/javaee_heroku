@@ -176,7 +176,7 @@
         <plugin>
             <groupId>org.wildfly.plugins</groupId>
             <artifactId>wildfly-maven-plugin</artifactId>
-            <version>${version.wildfly.maven.plugin}</version>
+            <version>1.2.1.Final</version>
         </plugin>
 
         <plugin>
