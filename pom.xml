@@ -28,22 +28,7 @@
 <dependencyManagement>
 
 
-<dependencies>
-
-  <dependency>
-        <groupId>org.eclipse.persistence</groupId>
-        <artifactId>org.eclipse.persistence.core</artifactId>
-        <version>2.6.4</version>
-        <scope>compile</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>org.eclipse.persistence</groupId>
-        <artifactId>org.eclipse.persistence.jpa</artifactId>
-        <version>2.6.4</version>
-        <scope>compile</scope>
-    </dependency>
-  
+<dependencies>  
   
   
     <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
@@ -106,7 +91,7 @@
 <artifactId>hibernate-jpa-2.1-api</artifactId>
 
 <version>1.0.0.Final</version>
-  <scope>provided</scope>
+
 
 </dependency>
 
@@ -196,8 +181,7 @@
 
 <!-- Commented to keep it simple -->
 <build>
-    <finalName>${project.artifactId}</finalName>
-    <plugins>
+     <plugins>
         <plugin>
             <groupId>org.wildfly.plugins</groupId>
             <artifactId>wildfly-maven-plugin</artifactId>
@@ -218,9 +202,9 @@
                     <configuration>
                         <artifactItems>
                             <artifactItem>
-                                <groupId>org.wildfly</groupId>
-                                <artifactId>wildfly-dist</artifactId>
-                                <version>12.0.0.CR1</version>
+    <groupId>org.wildfly</groupId>
+    <artifactId>wildfly-dist</artifactId>
+    <version>11.0.0.Final</version>
                                 <type>zip</type>
                                 <overWrite>false</overWrite>
                                 <outputDirectory>target</outputDirectory>
@@ -229,17 +213,6 @@
                     </configuration>
                 </execution>
             </executions>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <failOnMissingWebXml>false</failOnMissingWebXml>
-                <outputDirectory>target/wildfly-${version.wildfly}/standalone/deployments</outputDirectory>
-                <warName>${project.artifactId}</warName>
-            </configuration>
         </plugin>
     </plugins>
 </build>
