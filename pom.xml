@@ -11,34 +11,17 @@
 
 
 <properties>
-
 <version.wildfly.swarm>2017.9.4</version.wildfly.swarm>
-
 <maven.compiler.source>1.8</maven.compiler.source>
-
 <maven.compiler.target>1.8</maven.compiler.target>
-
 <failOnMissingWebXml>false</failOnMissingWebXml>
-
 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 </properties>
 
 
 <dependencyManagement>
 
-
 <dependencies>
-
- 
-  
-    <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
-<dependency>
-    <groupId>javax.persistence</groupId>
-    <artifactId>javax.persistence-api</artifactId>
-    <version>2.2</version>
-</dependency>
-
 
 <dependency>
 <groupId>javax</groupId>
@@ -125,8 +108,8 @@
 
 
 <!-- Commented to keep it simple -->
-<build>
-    <finalName>${project.artifactId}</finalName>
+<build>  
+    <finalName>Imoveis1</finalName>
     <plugins>
         <plugin>
             <groupId>org.wildfly.plugins</groupId>
