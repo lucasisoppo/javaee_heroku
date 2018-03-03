@@ -9,22 +9,6 @@
 
 <description>Sistema de Imoveis</description>
 
-
-<properties>
-
-<version.wildfly.swarm>2017.9.4</version.wildfly.swarm>
-
-<maven.compiler.source>1.8</maven.compiler.source>
-
-<maven.compiler.target>1.8</maven.compiler.target>
-
-<failOnMissingWebXml>false</failOnMissingWebXml>
-
-<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-</properties>
-
-
 <dependencyManagement>
 
 
@@ -39,17 +23,7 @@
 </dependency>
 
 
-<dependency>
 
-<groupId>javax</groupId>
-
-<artifactId>javaee-api</artifactId>
-
-<version>8.0</version>
-
-<scope>provided</scope>
-
-</dependency>
 
 <!-- WildFly Swarm Fractions -->
 
@@ -176,45 +150,52 @@
 
 </dependencyManagement>
 
-<!-- Commented to keep it simple -->
+ <properties>
+    <version.wildfly.swarm>2018.1.0</version.wildfly.swarm>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.wildfly.swarm</groupId>
+        <artifactId>bom-all</artifactId>
+        <version>${version.wildfly.swarm}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-<!-- Commented to keep it simple -->
-<build>
-     <plugins>
-        <plugin>
-            <groupId>org.wildfly.plugins</groupId>
-            <artifactId>wildfly-maven-plugin</artifactId>
-            <version>1.2.1.Final</version>
-        </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>3.0.0</version>
-            <executions>
-                <execution>
-                    <id>unpack</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>unpack</goal>
-                    </goals>
-                    <configuration>
-                        <artifactItems>
-                            <artifactItem>
-    <groupId>org.wildfly</groupId>
-    <artifactId>wildfly-dist</artifactId>
-    <version>11.0.0.Final</version>
-                                <type>zip</type>
-                                <overWrite>false</overWrite>
-                                <outputDirectory>target</outputDirectory>
-                            </artifactItem>
-                        </artifactItems>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
+  <build>
+    <finalName>herokuJavaee</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.wildfly.swarm</groupId>
+        <artifactId>wildfly-swarm-plugin</artifactId>
+        <version>${version.wildfly.swarm}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
-</build>
+  </build>
+
+  <dependencies>
+    <!-- Java EE 7 dependency -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
 </project>
