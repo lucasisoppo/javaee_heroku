@@ -1,1 +1,1 @@
-web:    java $JAVA_OPTS -jar target/herokuJavaee-swarm.jar --port $PORT target/*.war
+web:    java -Dswarm.http.port=$PORT -jar target/model-0.0.1-SNAPSHOT-swarm.jar
