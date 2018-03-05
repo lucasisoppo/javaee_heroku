@@ -1,1 +1,1 @@
-web:    java -Dswarm.http.port=$PORT -jar target/swarm-rs-1.0-SNAPSHOT-swarm.jar   --port $PORT target/*.war
+web:    java -Dswarm.http.port=$PORT -jar target/swarm-rs-1.0-SNAPSHOT-swarm.jar
